@@ -11,7 +11,7 @@ class Solution:
             mid = (lo+hi)//2
 
             if nums[lo]<nums[hi]:
-                minimum= min(minimum,nums[lo])
+                minimum= min(nums[lo],minimum)
                 break
             minimum = min(minimum,nums[mid])
             if nums[mid]>=nums[lo]:
