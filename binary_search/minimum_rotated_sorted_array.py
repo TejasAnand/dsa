@@ -1,21 +1,19 @@
-class Solution:
-    def findMin(self, nums: List[int]) -> int:
-        minimum=nums[0]
+        
+nums=[4,5,6,7,0,1,2]
+target=0
+lo=0
+hi = len(nums)-1
 
-        #implementing binary search here 
 
-        lo = 0
-        hi = len(nums)-1
+while lo<=hi:
+    mid = (lo+hi)//2
 
-        while lo<=hi:
-            mid = (lo+hi)//2
+    if nums[mid]==target:
+        print(mid)
+            
+    if nums[mid]<target:
+        hi=mid-1
+    else:
+        lo=mid+1
 
-            if nums[lo]<nums[hi]:
-                minimum= min(nums[lo],minimum)
-                break
-            minimum = min(minimum,nums[mid])
-            if nums[mid]>=nums[lo]:
-                lo = mid+1  #searching right
-            else:
-                hi = mid-1  #searching left
-        return minimum
+    print (-1)
