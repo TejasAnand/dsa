@@ -1,18 +1,22 @@
-s="()"
+class Solution:
+    def isValid(self, s: str) -> bool:
 
+        stack=[]
 
+        close_open = {")" : "(", "]" : "[", "}" : "{"}
 
-for i in range(len(s)):
-
-            if i%2==0:
-                if(s[i]=='(') or (s[i]=='[') or (s[i]=='{') and 
-                (s[i+1]==')') or (s[i+1]==']') or (s[i+1]=='}'):
-                return True
+        for char in s:
+            if char in close_open:
+                if stack and stack[-1]==close_open[char]:
+                    stack.pop()
                 else:
                     return False
+
             else:
-                if(s[i]==')' or s[i]==']' or s[i]=='}') and 
-                (s[i-1]=='(' or s[i-1]=='[' or s[i-1]=='{'):
-                return True
-                else:
-                    return False
+                stack.append(char)
+
+        if stack==[]:
+            return True
+        else:
+            return False
+        
