@@ -1,5 +1,5 @@
 # Define the unsorted array
-arr = [10, 5, 13, 8, 2]
+arr = [10, 5, 1, 1, 2]
 
 # Iterate through each element in the array
 for i in range(1, len(arr)):
