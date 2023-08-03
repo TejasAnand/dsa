@@ -32,16 +32,18 @@ def minValueNode(root):
 def remove(root, val):
     if not root:
         return None
-
+# 0 children
     if val > root.val:
         root.right = remove(root.right, val)
     elif val < root.val:
         root.left = remove(root.left, val)
     else:
+        # 1child
         if not root.left:
             return root.right
         elif not root.right:
             return root.left
+        # 2child
         else:
             minNode = minValueNode(root.right)
             root.val = minNode.val
