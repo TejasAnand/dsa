@@ -12,13 +12,13 @@ def bfs(root):
         queue.append(root)  # first in
 
     level = 0
-    while len(queue) > 0:
+    while len(queue) > 0:  # queue/tree exists
         print("level: ", level)
         for i in range(len(queue)):
             curr = queue.popleft()  # first out
             print(curr.val)
             if curr.left:
-                queue. append(curr.left)
+                queue.append(curr.left)
             if curr.right:
                 queue.append(curr.right)
     level += 1
