@@ -1,5 +1,8 @@
 # Implementation of MergeSort
 def mergeSort(arr, s, e):
+
+    s = 0
+    e = len(arr) - 1
     if e - s + 1 <= 1:
         return arr
 
